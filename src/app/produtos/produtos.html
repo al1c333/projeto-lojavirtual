@@ -1,0 +1,9 @@
+<h2>Lista de Produtos</h2>
+
+<ul>
+ @for (produto of produtos(); track produto.id) {
+  <li>{{ produto.nome }}</li>
+} @empty {
+  <li>Nenhum produto encontrado.</li>
+}
+</ul>

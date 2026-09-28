@@ -1,0 +1,23 @@
+@if (itens().length > 0) {
+  <div class="lista-itens">
+    @for (item of itens(); track item.id) {
+      <div class="item-card">
+        <p>{{ item.produto.nome }}</p>
+        <p>Preço unitário: {{ item.produto.preco }}</p>
+
+        <div class="linha-quantidade">
+          <button (click)="diminuir(item.id)">-</button>
+          <span>{{ item.quantidade }}</span>
+          <button (click)="aumentar(item.id)">+</button>
+          <button class="btn-excluir" (click)="remover(item.id)">Excluir</button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="total">
+    <strong>Total: {{ total() }}</strong>
+  </div>
+} @else {
+  <p>Seu carrinho está vazio.</p>
+}

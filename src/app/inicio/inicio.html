@@ -1,0 +1,13 @@
+<app-carrinho />
+
+<div class="lista-produtos">
+  @for (produto of produtos(); track produto.id) {
+    <div class="produto-card">
+      <img [src]="produto.foto" [alt]="produto.nome">
+      <p (click)="verDetalhe(produto.id)">{{ produto.nome }}</p>
+      <p>{{ produto.preco }}</p>
+
+      <button (click)="adicionarAoCarrinho(produto)">Adicionar ao carrinho</button>
+    </div>
+  }
+</div>
